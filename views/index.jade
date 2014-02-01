@@ -1,0 +1,73 @@
+extends base
+
+block title
+  title #{title}
+
+block contentsTitle
+  h1 ジャンル別ランキング
+
+block menutab
+  .pure-menu.pure-menu-open
+    ul
+      li.pure-menu-heading ジャンル
+      li 
+        a(href='') 総合
+      li 
+        a(href='') ホビー・スポーツ
+      li 
+        a(href='') 漫画・アニメ
+      li 
+        a(href='') ビジネス・経済
+      li 
+        a(href='') パソコン・システム開発
+      li 
+        a(href='') エンタメ・ゲーム
+      li 
+        a(href='') 写真集・タレント
+      li 
+        a(href='') ゲーム攻略
+      li 
+        a(href='') 語学・学習参考書
+      li 
+        a(href='') 科学・医学
+      li 
+        a(href='') 絵本・児童書・図鑑
+      li 
+        a(href='') 生活・美容
+      li 
+        a(href='') 趣味
+      li 
+        a(href='') 人文・歴史
+      li 
+        a(href='') 楽譜
+
+block contents
+  table(width='100%').pure-table.pure-table-horizontal
+    thead
+      tr
+        th 本日のおすすめ
+        th 
+        th 
+        th 
+    tbody
+      tr
+        td
+          img(src='http://www.freshnewsdelivery.com/media/11/20120113-bookstack.jpg' width='150px')
+        td ほげのｽｽﾒ
+        td \1000
+        td ★★★★★
+  table(width='100%').pure-table.pure-table-horizontal
+    thead
+      tr
+        th #
+        th 画像
+        th タイトル
+        th 価格
+        th レビュー評価(件)
+    tbody
+      tr
+        each val,index in #{'booklist'}
+          bookRow(index,val["imgURL"],val["title"],val["price"],val["review"],val["reviewCount"])
+
+
+          

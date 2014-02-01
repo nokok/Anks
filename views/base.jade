@@ -1,0 +1,35 @@
+mixin bookRow(index,imgURL,title,price,review,reviewCount)
+  td #{index}
+  td img(src=#{imgURL} width=150 alt='読み込み中')
+  td #{title}
+  td \#{price} 
+  td #{review} (#{reviewCount})
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    link(rel='stylesheet' href='http://yui.yahooapis.com/pure/0.3.0/pure-min.css')
+    block title
+  body
+    block header
+      div.pure-menu.pure-menu-open.pure-menu-horizontal
+        a(href='/').pure-menu-heading Anks
+        ul
+          li.pure-menu-selected
+            a(href='/') Main
+          li
+            a(href='/recommends') レコメンド
+          li
+            a(href='/trends') 急上昇
+    .pure-g
+      .pure-u-1-5
+      .pure-u-3-5
+        block contentsTitle
+        input(type='text' width='100%')
+        button.button-small.pure-button 検索 
+      .pure-u-1-5
+      .pure-u-1-5
+        block menutab
+      .pure-u-3-5  
+        block contents
